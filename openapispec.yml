@@ -1,0 +1,631 @@
+openapi: 3.1.0
+x-stoplight:
+  id: k32mv70gjgoo8
+info:
+  title: openAPI_fwe_homework
+  version: '1.0'
+  description: Delete Item from ShoppingList
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /shoppingLists:
+    get:
+      summary: Your GET endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingList'
+                  x-stoplight:
+                    id: buk5w7n27vonf
+      operationId: get-shoppingLists
+      x-stoplight:
+        id: h0y4u3ibw04u9
+    post:
+      summary: Your POST endpoint
+      tags: [ ]
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/ShoppingList'
+      operationId: post-shoppingLists
+      x-stoplight:
+        id: d6c4ak2379hnc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: nhd9qbq9o1c4z
+                description:
+                  type: string
+                  x-stoplight:
+                    id: 6jq1hbcpobsun
+                items:
+                  type: array
+                  x-stoplight:
+                    id: m02umbf3xihkd
+                  items:
+                    x-stoplight:
+                      id: r0z1uxiygn2hd
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        x-stoplight:
+                          id: 5k6mhrkn5p60f
+                        format: uuid
+                      name:
+                        type: string
+                        x-stoplight:
+                          id: nw9jviue8x2nw
+                      description:
+                        type: string
+                        x-stoplight:
+                          id: oh6622tdb9xho
+  '/shoppingLists/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/ShoppingList'
+      operationId: get-shoppingLists-id
+      x-stoplight:
+        id: h3aw7dz5ztax4
+      requestBody:
+        content: { }
+    put:
+      summary: Your PUT endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/ShoppingList'
+      operationId: put-shoppingLists-id
+      x-stoplight:
+        id: yan0t8sws8447
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: zipsiitklp66z
+                description:
+                  type: string
+                  x-stoplight:
+                    id: xzt9r7f4zb45r
+                items:
+                  type: array
+                  x-stoplight:
+                    id: a16nsmna2h1uz
+                  items:
+                    x-stoplight:
+                      id: 1u5a0bzfmuom2
+                    type: object
+                    required:
+                      - id
+                    properties:
+                      id:
+                        type: string
+                        x-stoplight:
+                          id: miio70wxdww67
+                        format: uuid
+                      quantity:
+                        type: integer
+                        x-stoplight:
+                          id: ca52ee05buuzj
+                      isPurchased:
+                        type: boolean
+                        x-stoplight:
+                          id: ldgi5w0x0r4ko
+      description: Update ShoppingList
+    delete:
+      summary: Your DELETE endpoint
+      tags: [ ]
+      responses:
+        '204':
+          description: No Content
+      operationId: delete-shoppingLists-id
+      x-stoplight:
+        id: 2g5z6iuresy60
+  '/shoppingLists/items/{itemId}':
+    parameters:
+      - schema:
+          type: string
+        name: itemId
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingListItem'
+                  x-stoplight:
+                    id: 1bjyf1kz4hbdg
+      operationId: get-shoppingLists-items-itemId
+      x-stoplight:
+        id: mjql0z4wm753b
+  /shoppingLists/search:
+    get:
+      summary: Your GET endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingList'
+                  x-stoplight:
+                    id: ea44g9b2phhtj
+      operationId: get-shoppingLists-search
+      x-stoplight:
+        id: 2mlv0z17zc2a9
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: name
+        - schema:
+            type: string
+          in: query
+          name: description
+  '/shoppingLists/{shoppingListId}/items/{itemId}':
+    parameters:
+      - schema:
+          type: string
+        name: shoppingListId
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: itemId
+        in: path
+        required: true
+    put:
+      summary: Your PUT endpoint
+      tags: [ ]
+      responses:
+        '201':
+          description: Created
+          headers: { }
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/ShoppingListItem'
+      operationId: put-shoppingLists-shoppingListId-items-itemId
+      x-stoplight:
+        id: 1qsdyykg7gxmy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - quantity
+              properties:
+                quantity:
+                  type: integer
+                  x-stoplight:
+                    id: 8mmenwln10oa8
+                isPurchased:
+                  type: boolean
+                  x-stoplight:
+                    id: fysfbfpkkn8zw
+      description: Add Item to ShoppingList
+    delete:
+      summary: Your DELETE endpoint
+      tags: [ ]
+      responses:
+        '204':
+          description: No Content
+      operationId: delete-shoppingLists-shoppingListId-items-itemId
+      x-stoplight:
+        id: e3lscfthyhac3
+  /shoppingLists/search/favorites:
+    get:
+      summary: Your GET endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingList'
+                  x-stoplight:
+                    id: 6tsulztyop8ca
+      operationId: get-shoppingLists-search-favorites
+      x-stoplight:
+        id: gt5vefzxao0c1
+      description: Get All Favorite ShoppingLists
+      parameters: [ ]
+  '/shoppingLists/{shoppingListId}/favorites':
+    parameters:
+      - schema:
+          type: string
+        name: shoppingListId
+        in: path
+        required: true
+    put:
+      summary: Your PUT endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/ShoppingList'
+      operationId: put-shoppingLists-shoppingListId-favorites
+      x-stoplight:
+        id: 0d1ki601tjeq5
+      description: Update Favorite Status
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - isFavorite
+              properties:
+                isFavorite:
+                  type: boolean
+                  x-stoplight:
+                    id: zwwn49oqbrchf
+  '/shoppingLists/toggle/{shoppingListId}/{itemId}':
+    parameters:
+      - schema:
+          type: string
+        name: shoppingListId
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: itemId
+        in: path
+        required: true
+    patch:
+      summary: Your PATCH endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/ShoppingListItem'
+      operationId: patchToggleIsPurchased
+      x-stoplight:
+        id: e733sd14zgjcx
+      description: toggle isPurchased State of Item in ShoppingList
+  '/shoppingLists/updateQuantity/{shoppingListId}/{itemId}':
+    parameters:
+      - schema:
+          type: string
+        name: shoppingListId
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: itemId
+        in: path
+        required: true
+    patch:
+      summary: Your PATCH endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShoppingListItem'
+      operationId: patchUpdateQuantity
+      x-stoplight:
+        id: 2veqkoueizhww
+      description: update Quantity of an item in shoppingList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: integer
+                  x-stoplight:
+                    id: 2me4fxg54ck90
+  /items:
+    get:
+      summary: Your GET endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+                  x-stoplight:
+                    id: g47op55vzdluy
+      operationId: get-items
+      x-stoplight:
+        id: ea758hrszzi90
+    post:
+      summary: Your POST endpoint
+      tags: [ ]
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+                  x-stoplight:
+                    id: ubhe5o985vhq4
+      operationId: post-items
+      x-stoplight:
+        id: 17vhp04uq6xuf
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                x-stoplight:
+                  id: 9f01a549ar79f
+                type: object
+                required:
+                  - name
+                properties:
+                  name:
+                    type: string
+                    x-stoplight:
+                      id: 6k2licgktj7a9
+                  description:
+                    type: string
+                    x-stoplight:
+                      id: fyomgc0lrdiqq
+  '/items/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Item'
+      operationId: get-items-id
+      x-stoplight:
+        id: a5j885qpiqofp
+    put:
+      summary: Your PUT endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Item'
+      operationId: put-items-id
+      x-stoplight:
+        id: 4m5d82ksj66we
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: kat5t9y8wayas
+                description:
+                  type: string
+                  x-stoplight:
+                    id: yql54l36qjcyw
+      description: Update Item
+    delete:
+      summary: Your DELETE endpoint
+      tags: [ ]
+      responses:
+        '204':
+          description: No Content
+      operationId: delete-items-id
+      x-stoplight:
+        id: wq7ryaykkde5g
+  '/items/name/{itemName}':
+    parameters:
+      - schema:
+          type: string
+        name: itemName
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Item'
+      operationId: get-items-name-itemName
+      x-stoplight:
+        id: rdsl01f22nex1
+components:
+  schemas:
+    ShoppingList:
+      title: ShoppingList
+      x-stoplight:
+        id: nf5z42ecyh27u
+      type: object
+      required:
+        - id
+        - name
+        - createdAt
+        - isFavorite
+      properties:
+        id:
+          type: string
+          x-stoplight:
+            id: 4khn9y4lvs92w
+          format: uuid
+        name:
+          type: string
+          x-stoplight:
+            id: fm2zav51yw2y3
+        description:
+          type: string
+          x-stoplight:
+            id: 40rri6ut0j4zz
+        createdAt:
+          type: string
+          x-stoplight:
+            id: f7dxoj4v2zet4
+          format: date
+        isFavorite:
+          type: boolean
+          x-stoplight:
+            id: cnu29qzl4ucoc
+          default: false
+        shoppingListItems:
+          x-stoplight:
+            id: aqr9ydl232aub
+          type: array
+          items:
+            x-stoplight:
+              id: ibrj6dxcyxf3f
+            type: object
+            properties:
+              isPurchased:
+                x-stoplight:
+                  id: 12f3owk8y9flu
+                type: boolean
+              quantity:
+                type: integer
+                x-stoplight:
+                  id: 6g12n2m9lalq6
+              item:
+                $ref: '#/components/schemas/Item'
+                x-stoplight:
+                  id: 38oxnddeic9dj
+    Item:
+      title: Item
+      x-stoplight:
+        id: atvipnm40ym9i
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          x-stoplight:
+            id: 1ogef8wdydfbs
+          format: uuid
+        name:
+          type: string
+          x-stoplight:
+            id: 2dhd81iddtyvd
+        description:
+          type: string
+          x-stoplight:
+            id: a3wuwk1j4vn70
+    ShoppingListItem:
+      title: ShoppingListItem
+      x-stoplight:
+        id: m83pltsrhkt54
+      type: object
+      required:
+        - listId
+        - itemId
+        - quantity
+        - isPurchased
+      properties:
+        listId:
+          type: string
+          x-stoplight:
+            id: 5y3xraey5uo9t
+          format: uuid
+        itemId:
+          type: string
+          x-stoplight:
+            id: 17xq4zpuwbf88
+          format: uuid
+        quantity:
+          type: integer
+          x-stoplight:
+            id: kjr8lo62njh4l
+          default: 1
+        isPurchased:
+          type: boolean
+          x-stoplight:
+            id: z274g6okb7g79
+          default: false

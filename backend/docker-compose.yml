@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  fwe-shoppingList-db:
+    image: postgres:latest
+    container_name: fwe-shoppingList-db
+    restart: always
+    environment:
+
+      POSTGRES_DB: shoppingList_database
+      POSTGRES_USER: shoppingList_db_user
+      POSTGRES_PASSWORD: ganzGeheim!
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: [ 'CMD', 'pg_isready', '-U', 'shoppingList_db_user', '-d', 'shoppingList_database' ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - fwe-shoppingList-db-data:/var/lib/postgresql/data
+
+volumes:
+  fwe-shoppingList-db-data:
+    driver: local

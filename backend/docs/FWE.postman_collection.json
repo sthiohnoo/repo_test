@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "4f41e493-3e64-47bb-8fe9-6bcfa2a54045",
+		"name": "FWE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39546278"
+	},
+	"item": [
+		{
+			"name": "items",
+			"item": [
+				{
+					"name": "Items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/items/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/items/:itemId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"items",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "8b304224-9358-4d21-8aec-160e02a62b48"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/items/name/:itemName",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"items",
+								"name",
+								":itemName"
+							],
+							"variable": [
+								{
+									"key": "itemName",
+									"value": "B"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create items",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"Test3\",\r\n        \"description\": \"Test3\"\r\n    },\r\n    {\r\n        \"name\": \"Test4\"\r\n    }\r\n    \r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/items/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ApfeltoUpdate\",\r\n    \"description\": \"oha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/items/:itemId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"items",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "4ac7b29f-2a82-4eac-aec2-629b18465f54"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/items/:itemId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"items",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "4ac7b29f-2a82-4eac-aec2-629b18465f54"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/health/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"health",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shoppingLists",
+			"item": [
+				{
+					"name": "ShoppingLists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists"
+							],
+							"query": [
+								{
+									"key": "withRelations",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ShoppingListById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/:shoppingListId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								":shoppingListId"
+							],
+							"query": [
+								{
+									"key": "withRelations",
+									"value": "false",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "shoppingListId",
+									"value": "5d0d866a-dfc0-41ac-80c2-35913f9fce6a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ShoppingLists with searching Item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/items/:itemId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								"items",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "d8d891c3-a3b6-4afa-b332-dc110b752c62"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search ShoppingLists with name or description",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/search?name=&description=",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "description",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create ShoppingList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Testlist for delete ItemInList\",\r\n    \"description\": \"hat viele Items\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"8b304224-9358-4d21-8aec-160e02a62b48\"\r\n        },\r\n        {\r\n            \"id\": \"58c08277-bc19-4e4d-a399-897cd0355e2f\"\r\n        },\r\n        {\r\n            \"id\": \"d8d891c3-a3b6-4afa-b332-dc110b752c62\"\r\n        },\r\n        {\r\n            \"id\": \"c2eaadb6-f7e9-4222-8e39-f66573c7a622\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update ShoppingList",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TestBAUM\",\r\n    \"description\": \"colinbaum\",\r\n    \"items\":[\r\n        {\r\n            \"id\": \"4ac7b29f-2a82-4eac-aec2-629b18465f54\",\r\n            \"quantity\": 2,\r\n            \"isPurchased\": false\r\n        },\r\n        {\r\n            \"id\": \"c2eaadb6-f7e9-4222-8e39-f66573c7a622\",\r\n            \"quantity\": 234,\r\n            \"isPurchased\": false\r\n        }\r\n        \r\n    ]\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/:shoppingListId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								":shoppingListId"
+							],
+							"variable": [
+								{
+									"key": "shoppingListId",
+									"value": "e8e1178a-86b4-4f9b-88fd-6e989b9d711a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Item to List",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 99,\r\n    \"isPurchased\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/:shoppingListId/items/:itemId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								":shoppingListId",
+								"items",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "shoppingListId",
+									"value": "e8e1178a-86b4-4f9b-88fd-6e989b9d711a"
+								},
+								{
+									"key": "itemId",
+									"value": "d8d891c3-a3b6-4afa-b332-dc110b752c62"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ShoppingList",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/:shoppingListId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								":shoppingListId"
+							],
+							"variable": [
+								{
+									"key": "shoppingListId",
+									"value": "f554cac7-5b6a-4715-94de-d118c5d96f4a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ItemInList",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/:shoppingListId/items/:itemId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								":shoppingListId",
+								"items",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "shoppingListId",
+									"value": "f554cac7-5b6a-4715-94de-d118c5d96f4a"
+								},
+								{
+									"key": "itemId",
+									"value": "c2eaadb6-f7e9-4222-8e39-f66573c7a622"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get favorite ShoppingLists",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update Favorite Status",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "toggleIsPurchased",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/:shoppingListId/items/:itemId/toggle",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								":shoppingListId",
+								"items",
+								":itemId",
+								"toggle"
+							],
+							"variable": [
+								{
+									"key": "shoppingListId",
+									"value": "9b1c9a9c-2757-473b-8611-6262b69bdb18"
+								},
+								{
+									"key": "itemId",
+									"value": "926c23bc-2808-40b0-a376-80ac6c4d568c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateQuantity",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shoppingLists/updateQuantity/:shoppingListId/:itemId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shoppingLists",
+								"updateQuantity",
+								":shoppingListId",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "shoppingListId",
+									"value": "9b1c9a9c-2757-473b-8611-6262b69bdb18"
+								},
+								{
+									"key": "itemId",
+									"value": "926c23bc-2808-40b0-a376-80ac6c4d568c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

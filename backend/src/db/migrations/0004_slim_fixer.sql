@@ -1,0 +1,1 @@
+ALTER TABLE "shopping_list_item" ADD CONSTRAINT "shopping_list_item_list_id_item_id_pk" PRIMARY KEY("list_id","item_id");
